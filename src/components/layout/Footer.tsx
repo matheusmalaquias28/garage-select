@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { brands, cars } from "@/lib/stock";
 import { mapsUrl, nav, site, whatsappLink } from "@/lib/site";
@@ -139,13 +140,27 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-line bg-ink">
-        <div className="wrap flex flex-col gap-3 py-6 text-xs text-mute md:flex-row md:items-center md:justify-between">
+        <div className="wrap flex flex-col items-center gap-2.5 pt-6 pb-24 text-center text-xs text-mute md:pb-7">
           <p>
-            © 2026 Garage Select. Todos os direitos reservados. CNPJ {site.cnpj}
+            © 2026 Garage Select. Todos os direitos reservados. CNPJ {site.cnpj} · {cars.length} veículos em estoque
           </p>
-          <p>
-            {cars.length} veículos em estoque · Vila Velha, ES
-          </p>
+          <a
+            href="https://www.energymidia.com.br"
+            target="_blank"
+            rel="noopener"
+            aria-label="Desenvolvido com energia pela Energy (abre em nova aba)"
+            className="group inline-flex items-center gap-1 transition-colors hover:text-bone"
+          >
+            Desenvolvido com <span aria-hidden>⚡</span> pela
+            <Image
+              src="/brand/energy.svg"
+              alt="Energy"
+              width={829}
+              height={311}
+              unoptimized
+              className="ml-0.5 h-[18px] w-auto opacity-80 transition-opacity group-hover:opacity-100"
+            />
+          </a>
         </div>
       </div>
     </footer>
